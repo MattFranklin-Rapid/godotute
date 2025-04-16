@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxl80r8hxfey"]
+
+[ext_resource type="PackedScene" uid="uid://ba7fyo71t3e4s" path="res://components/hit_box_component.tscn" id="1_vorcx"]
+
+[node name="BaseSpike" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("1_vorcx")]
+collision_layer = 48

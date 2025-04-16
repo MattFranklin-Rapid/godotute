@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgspd2huaoh5h"]
+
+[ext_resource type="PackedScene" uid="uid://drxl80r8hxfey" path="res://scenes/props/base_spike.tscn" id="1_i4u2q"]
+[ext_resource type="Texture2D" uid="uid://cur52asusduh3" path="res://assets/sprites/SpikeCeiling.png" id="2_udqyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uek82"]
+size = Vector2(15, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmjhs"]
+size = Vector2(16, 6)
+
+[node name="SpikeCeiling" instance=ExtResource("1_i4u2q")]
+position = Vector2(0, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_udqyf")
+
+[node name="HitCollision" type="CollisionShape2D" parent="HitBoxComponent" index="0"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_uek82")
+debug_color = Color(0.588235, 0.0823529, 0.321569, 0.419608)
+
+[node name="SpriteCollision" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_mmjhs")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
