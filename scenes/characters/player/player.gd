@@ -36,5 +36,5 @@ func update_facing_direction() -> void:
 	elif velocity.x < 0:
 		animated_sprite_2d.flip_h = true
 
-func take_damage(amount) -> void:
+func take_damage(amount, body) -> void:
 	print("🔥")

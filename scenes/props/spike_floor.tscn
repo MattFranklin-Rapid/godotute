@@ -15,6 +15,9 @@ position = Vector2(0, 3)
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_r140v")
 
+[node name="HitBoxComponent" parent="." index="1"]
+collision_layer = 56
+
 [node name="HitCollision" type="CollisionShape2D" parent="HitBoxComponent" index="0"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_je26s")

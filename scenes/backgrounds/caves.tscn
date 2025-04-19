@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://g3bfkw0lko3a"]
+
+[ext_resource type="Texture2D" uid="uid://8wmjnj28r38f" path="res://assets/textures/backgrounds/caves/7.png" id="1_070ba"]
+[ext_resource type="Texture2D" uid="uid://dpblv2jtpxq0l" path="res://assets/textures/backgrounds/caves/6.png" id="2_4vlfr"]
+[ext_resource type="Texture2D" uid="uid://bljsbeg4iyvj0" path="res://assets/textures/backgrounds/caves/5.png" id="3_ur8jc"]
+[ext_resource type="Texture2D" uid="uid://cu0vnmrdflmw2" path="res://assets/textures/backgrounds/caves/4.png" id="4_xlvxn"]
+[ext_resource type="Texture2D" uid="uid://cws7atpiw45q5" path="res://assets/textures/backgrounds/caves/3.png" id="5_rh1pi"]
+[ext_resource type="Texture2D" uid="uid://cp8qwr7vdmdoa" path="res://assets/textures/backgrounds/caves/2.png" id="6_xblx0"]
+[ext_resource type="Texture2D" uid="uid://b55f48wt255em" path="res://assets/textures/backgrounds/caves/1.png" id="7_si2eq"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+scale = Vector2(3, 3)
+texture = ExtResource("1_070ba")
+centered = false
+
+[node name="Far Pillars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Far Pillars"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_4vlfr")
+centered = false
+
+[node name="Less Far Pillars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Less Far Pillars"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_ur8jc")
+centered = false
+
+[node name="Even Less Far Pillars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Even Less Far Pillars"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_xlvxn")
+centered = false
+
+[node name="Mid Pillars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mid Pillars"]
+scale = Vector2(3, 3)
+texture = ExtResource("5_rh1pi")
+centered = false
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+scale = Vector2(3, 3)
+texture = ExtResource("6_xblx0")
+centered = false
+
+[node name="Near Foreground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Near Foreground"]
+scale = Vector2(3, 3)
+texture = ExtResource("7_si2eq")
+centered = false

@@ -12,7 +12,7 @@ func _ready():
 func _on_body_entered(hitbox: HitBox) -> void:
 	if owner.has_method("take_damage"):
 		_invincibility_start()
-		owner.take_damage(hitbox.damage)
+		owner.take_damage(hitbox.damage, hitbox)
 
 func _invincibility_timeout() -> void:
 	collision_shape_2d.disabled = false
