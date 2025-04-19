@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://gynawl8g01xt"]
+
+[ext_resource type="PackedScene" uid="uid://t2v55iowkeoe" path="res://scenes/userInterface/cherry.tscn" id="1_lm2s2"]
+[ext_resource type="Texture2D" uid="uid://beqco4a18i16r" path="res://assets/sprites/UI/coin/Coin.png" id="2_jv4ju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8pkac"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="VBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -448.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 192.0
+grow_horizontal = 0
+
+[node name="HealthBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+
+[node name="Cherry" parent="HealthBoxContainer" instance=ExtResource("1_lm2s2")]
+layout_mode = 2
+
+[node name="Cherry2" parent="HealthBoxContainer" instance=ExtResource("1_lm2s2")]
+layout_mode = 2
+
+[node name="Cherry3" parent="HealthBoxContainer" instance=ExtResource("1_lm2s2")]
+layout_mode = 2
+
+[node name="Cherry4" parent="HealthBoxContainer" instance=ExtResource("1_lm2s2")]
+layout_mode = 2
+
+[node name="Cherry5" parent="HealthBoxContainer" instance=ExtResource("1_lm2s2")]
+layout_mode = 2
+
+[node name="CoinContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CoinContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_jv4ju")
+stretch_mode = 2
+
+[node name="CoinCount" type="Label" parent="CoinContainer"]
+layout_mode = 2
+text = "200"
+label_settings = SubResource("LabelSettings_8pkac")

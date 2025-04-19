@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://t2v55iowkeoe"]
+
+[ext_resource type="Texture2D" uid="uid://dm72wcbnou421" path="res://assets/sprites/UI/spin heart/spin-heart-1.png" id="1_udb4b"]
+[ext_resource type="Texture2D" uid="uid://dwitollu5568n" path="res://assets/sprites/UI/spin heart/spin-heart-2.png" id="2_3voc7"]
+[ext_resource type="Texture2D" uid="uid://bww0ikfs7r3ye" path="res://assets/sprites/UI/spin heart/spin-heart-3.png" id="3_mnul4"]
+[ext_resource type="Texture2D" uid="uid://ccrm8dn6kwc86" path="res://assets/sprites/UI/spin heart/spin-heart-4.png" id="4_rhsj7"]
+[ext_resource type="Texture2D" uid="uid://cbf5wirf8fg5p" path="res://assets/sprites/UI/spin heart/spin-heart-5.png" id="5_ycypp"]
+[ext_resource type="Texture2D" uid="uid://dkj14tfme20yh" path="res://assets/sprites/UI/spin heart/spin-heart-6.png" id="6_fk4s0"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_put6c"]
+frames = 6
+frame_0/texture = ExtResource("1_udb4b")
+frame_0/duration = 5.0
+frame_1/texture = ExtResource("2_3voc7")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("3_mnul4")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("4_rhsj7")
+frame_3/duration = 0.5
+frame_4/texture = ExtResource("5_ycypp")
+frame_4/duration = 0.5
+frame_5/texture = ExtResource("6_fk4s0")
+frame_5/duration = 0.5
+
+[node name="Cherry" type="TextureRect"]
+custom_minimum_size = Vector2(15, 15)
+offset_right = 128.0
+offset_bottom = 128.0
+texture = SubResource("AnimatedTexture_put6c")
+expand_mode = 1
+stretch_mode = 5
