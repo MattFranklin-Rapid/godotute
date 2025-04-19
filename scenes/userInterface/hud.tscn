@@ -53,5 +53,5 @@ stretch_mode = 2
 
 [node name="CoinCount" type="Label" parent="CoinContainer"]
 layout_mode = 2
-text = "200"
+text = "0"
 label_settings = SubResource("LabelSettings_8pkac")

@@ -6,6 +6,7 @@ const HEALTH_ICON = preload("uid://t2v55iowkeoe") # Cherry.tscn
 
 func _ready():
 	Event.connect("health_changed", _on_healthChanged)
+	Event.connect("coin_collected", _on_coin_collected)
 
 func _on_healthChanged(old_health, new_health, max_health) -> void:
 	var lives_left = health_box_container.get_child_count()
@@ -19,3 +20,7 @@ func _on_healthChanged(old_health, new_health, max_health) -> void:
 			var cherry = HEALTH_ICON.instantiate()
 			health_box_container.add_child(cherry)
 			lives_left += 1
+
+func _on_coin_collected(value) -> void:
+	Event.total_coins = value
+	$CoinContainer/CoinCount.text = "%d" % Event.total_coins

@@ -37,6 +37,9 @@ func update_facing_direction() -> void:
 		animated_sprite_2d.flip_h = true
 
 func take_damage(amount, body) -> void:
+	if body.get_parent() is Enemy:
+		if body.global_position.y > get_node("HurtBox").global_position.y:
+			return
 	var old_health = player_health
 	player_health -= amount
 	Event.emit_signal("health_changed", old_health, player_health, MAX_HEALTH)
