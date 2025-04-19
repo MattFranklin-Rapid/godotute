@@ -53,9 +53,11 @@ func extra_live(amount) -> void:
 	Event.emit_signal("health_changed", old_health, player_health, MAX_HEALTH)
 
 func revive() -> void:
-	global_position = start_position
-	animated_sprite_2d.play("idle")
+	
+	#global_position = start_position
+	#animated_sprite_2d.play("idle")
 	var old_health = player_health
 	Event.emit_signal("health_changed", old_health, MAX_HEALTH, MAX_HEALTH)
 	player_health = MAX_HEALTH
+	get_tree().change_scene_to_file("uid://bs51eubaxo8ha") #Test Level
 	
