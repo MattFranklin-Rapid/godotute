@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://bs51eubaxo8ha"]
+[gd_scene load_steps=17 format=4 uid="uid://bs51eubaxo8ha"]
 
+[ext_resource type="PackedScene" uid="uid://ba7fyo71t3e4s" path="res://components/hit_box_component.tscn" id="1_jmx14"]
 [ext_resource type="Texture2D" uid="uid://eacrbh2eossq" path="res://assets/textures/tiles/Dungeon Tile Set.png" id="1_rol0c"]
 [ext_resource type="PackedScene" uid="uid://s7q8uukyr3bp" path="res://scenes/characters/player/player.tscn" id="2_gwcso"]
 [ext_resource type="PackedScene" uid="uid://dgspd2huaoh5h" path="res://scenes/props/spike_ceiling.tscn" id="2_ixfgq"]
@@ -10,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://gynawl8g01xt" path="res://scenes/userInterface/hud.tscn" id="8_7x1jh"]
 [ext_resource type="PackedScene" uid="uid://drv8etjuccs3s" path="res://scenes/props/health_pickup.tscn" id="9_hfwtw"]
 [ext_resource type="PackedScene" uid="uid://bqw18503k6on8" path="res://scenes/props/coin.tscn" id="10_2mu0v"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2mu0v"]
+normal = Vector2(0, 0.006)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eaa0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5uad"]
 texture = ExtResource("1_rol0c")
@@ -212,6 +218,48 @@ sources/1 = SubResource("TileSetScenesCollectionSource_vpff7")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="WorldBoundaries" type="Node" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="WorldBoundaries"]
+position = Vector2(64, 0)
+rotation = -1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_2mu0v")
+
+[node name="Right" type="StaticBody2D" parent="WorldBoundaries"]
+position = Vector2(1260, 0)
+rotation = 1.5708
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_2mu0v")
+
+[node name="Top" type="StaticBody2D" parent="WorldBoundaries"]
+position = Vector2(1260, -115)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_2mu0v")
+
+[node name="Bottom" type="StaticBody2D" parent="WorldBoundaries"]
+position = Vector2(1260, 317)
+rotation = 3.14159
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/Bottom"]
+shape = SubResource("WorldBoundaryShape2D_2mu0v")
+
+[node name="HitBoxComponent" parent="WorldBoundaries" instance=ExtResource("1_jmx14")]
+collision_layer = 8
+damage = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/HitBoxComponent"]
+position = Vector2(1146, 299)
+shape = SubResource("WorldBoundaryShape2D_eaa0b")
+debug_color = Color(0.961931, 0, 0.507517, 0.42)
+
 [node name="Player" parent="." instance=ExtResource("2_gwcso")]
 z_index = 11
 position = Vector2(820, 35)
@@ -226,6 +274,10 @@ remote_path = NodePath("../../Camera2D")
 visible = false
 position = Vector2(820, 35)
 zoom = Vector2(3, 3)
+limit_left = 60
+limit_top = 0
+limit_right = 1300
+limit_bottom = 300
 
 [node name="background" type="TileMapLayer" parent="."]
 use_parent_material = true
