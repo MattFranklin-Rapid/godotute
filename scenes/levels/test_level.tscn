@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bs51eubaxo8ha"]
+[gd_scene load_steps=13 format=4 uid="uid://bs51eubaxo8ha"]
 
 [ext_resource type="Texture2D" uid="uid://eacrbh2eossq" path="res://assets/textures/tiles/Dungeon Tile Set.png" id="1_rol0c"]
 [ext_resource type="PackedScene" uid="uid://s7q8uukyr3bp" path="res://scenes/characters/player/player.tscn" id="2_gwcso"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://njc3v10oijao" path="res://scenes/characters/enemies/enemy_cat.tscn" id="6_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://duoc0ecyje0en" path="res://scenes/characters/enemies/enemy_frog.tscn" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://gynawl8g01xt" path="res://scenes/userInterface/hud.tscn" id="8_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://drv8etjuccs3s" path="res://scenes/props/health_pickup.tscn" id="9_hfwtw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5uad"]
 texture = ExtResource("1_rol0c")
@@ -266,3 +267,6 @@ offset_left = -434.0
 offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 178.0
+
+[node name="HealthPickup" parent="." instance=ExtResource("9_hfwtw")]
+position = Vector2(204, 9)

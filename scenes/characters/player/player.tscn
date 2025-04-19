@@ -45,3 +45,4 @@ debug_color = Color(0.917647, 0.0666667, 0.290196, 0.419608)
 
 [node name="Timer" type="Timer" parent="HurtBox"]
 wait_time = 0.8
+one_shot = true

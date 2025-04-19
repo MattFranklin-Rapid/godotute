@@ -10,7 +10,7 @@ func _ready():
 	timer.timeout.connect(_invincibility_timeout)
 
 func _on_body_entered(hitbox: HitBox) -> void:
-	if owner.has_method("take_damage"):
+	if owner.has_method("take_damage") and timer.is_stopped():
 		_invincibility_start()
 		owner.take_damage(hitbox.damage, hitbox)
 

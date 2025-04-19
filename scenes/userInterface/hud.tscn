@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://gynawl8g01xt"]
+[gd_scene load_steps=5 format=3 uid="uid://gynawl8g01xt"]
 
+[ext_resource type="Script" uid="uid://10puco2v4nyv" path="res://scenes/userInterface/hud.gd" id="1_jv4ju"]
 [ext_resource type="PackedScene" uid="uid://t2v55iowkeoe" path="res://scenes/userInterface/cherry.tscn" id="1_lm2s2"]
 [ext_resource type="Texture2D" uid="uid://beqco4a18i16r" path="res://assets/sprites/UI/coin/Coin.png" id="2_jv4ju"]
 
@@ -16,6 +17,7 @@ offset_top = 24.0
 offset_right = -24.0
 offset_bottom = 192.0
 grow_horizontal = 0
+script = ExtResource("1_jv4ju")
 
 [node name="HealthBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
