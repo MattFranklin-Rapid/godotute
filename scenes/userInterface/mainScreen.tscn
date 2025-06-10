@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c845g3ac5ewm5"]
+[gd_scene load_steps=4 format=3 uid="uid://c845g3ac5ewm5"]
 
 [ext_resource type="PackedScene" uid="uid://g3bfkw0lko3a" path="res://scenes/backgrounds/caves.tscn" id="1_s6i0v"]
 [ext_resource type="Script" uid="uid://d0bihopsrnrki" path="res://scenes/userInterface/start_button.gd" id="2_4xc4v"]
+[ext_resource type="Texture2D" uid="uid://cb38prc7hpxf8" path="res://assets/sprites/psyker/Inverted Psyker.png" id="3_rovl8"]
 
 [node name="MainScreen" type="Node2D"]
 
@@ -45,3 +46,8 @@ text = "Secondary Text"
 layout_mode = 2
 text = "Go!"
 script = ExtResource("2_4xc4v")
+
+[node name="InvertedPsyker" type="Sprite2D" parent="."]
+position = Vector2(239, 108)
+scale = Vector2(0.316423, 0.316423)
+texture = ExtResource("3_rovl8")
